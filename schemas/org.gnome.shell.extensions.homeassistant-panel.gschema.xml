@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.homeassistant-panel" path="/org/gnome/shell/extensions/homeassistant-panel/">
+    <key name="ha-url" type="s">
+      <default>'http://localhost:8123'</default>
+      <summary>Home Assistant URL</summary>
+      <description>The URL of your Home Assistant instance (include http:// or https://)</description>
+    </key>
+
+    <key name="ha-token" type="s">
+      <default>''</default>
+      <summary>Access Token</summary>
+      <description>Long-lived access token from Home Assistant for API authentication</description>
+    </key>
+
+    <key name="display-entities" type="as">
+      <default>['sensor.weather_temperature', 'sensor.weather_humidity']</default>
+      <summary>Display Entities</summary>
+      <description>List of entity IDs to display in the panel</description>
+    </key>
+
+    <key name="automations" type="as">
+      <default>[]</default>
+      <summary>Automation Entities</summary>
+      <description>List of automation entity IDs that can be triggered from the panel</description>
+    </key>
+
+    <key name="refresh-interval" type="i">
+      <default>30</default>
+      <summary>Refresh Interval</summary>
+      <description>Interval in seconds to refresh entity states</description>
+    </key>
+
+    <key name="show-icon" type="b">
+      <default>true</default>
+      <summary>Show Icon</summary>
+      <description>Whether to show the Home Assistant icon in the panel</description>
+    </key>
+  </schema>
+</schemalist>

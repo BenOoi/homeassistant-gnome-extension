@@ -1,0 +1,44 @@
+{
+  "name": "Home Assistant Panel",
+  "description": "Connect to Home Assistant and display entity values in the top bar. Trigger automations directly from your GNOME desktop.",
+  "uuid": "homeassistant-panel@user",
+  "shell-version": ["42", "43", "44", "45", "46"],
+  "version": 1,
+  "url": "https://github.com/BenOoi/homeassistant-gnome-extension",
+  "settings-schema": {
+    "type": "object",
+    "properties": {
+      "ha-url": {
+        "type": "string",
+        "default": "http://localhost:8123",
+        "description": "Home Assistant URL (include http:// or https://)"
+      },
+      "ha-token": {
+        "type": "string",
+        "default": "",
+        "description": "Long-lived access token from Home Assistant"
+      },
+      "display-entities": {
+        "type": "array",
+        "default": ["sensor.weather_temperature", "sensor.weather_humidity"],
+        "description": "List of entity IDs to display in the panel"
+      },
+      "refresh-interval": {
+        "type": "integer",
+        "default": 30,
+        "description": "Refresh interval in seconds"
+      },
+      "show-icon": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show Home Assistant icon in panel"
+      },
+      "automations": {
+        "type": "array",
+        "default": [],
+        "description": "List of automation entities to trigger"
+      }
+    },
+    "required": ["ha-url", "ha-token"]
+  }
+}
